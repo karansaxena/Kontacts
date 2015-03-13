@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+     >
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.karan.android.fragments.SearchFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        />
+
+    <fragment
+        android:id="@+id/contactListFragment"
+        android:name="com.karan.android.fragments.ContactListFragment"
+        android:layout_width="match_parent"
+        
+        android:layout_height="match_parent"
+        android:layout_weight="0.5" />
+
+</LinearLayout><!-- From: file:/C:/Users/Karan%20Saxena/Downloads/CCloudsContactsApp-master%202/res/layout/activity_main.xml -->
