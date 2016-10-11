@@ -9,7 +9,6 @@ import com.karan.android.R;
 import com.karan.android.fragments.SearchFragment;
 
 public class MainActivity extends FragmentActivity implements SearchFragment.onSearchListener {
-
 	ContactListFragment mContactsListFragment;
 	
 	@Override
@@ -20,12 +19,10 @@ public class MainActivity extends FragmentActivity implements SearchFragment.onS
 	}
 
 	private ContactListFragment getContactListFragment() {
-		
 		if( mContactsListFragment == null ) {
 			FragmentManager fragmentManager = getSupportFragmentManager();
 			mContactsListFragment = (ContactListFragment)
 	                fragmentManager.findFragmentById(R.id.contactListFragment);
-			
 		}
 		return mContactsListFragment;
 	}
@@ -34,16 +31,14 @@ public class MainActivity extends FragmentActivity implements SearchFragment.onS
 	 * SearchFragment.onSearchListener
 	 * */
 	@Override
-	public void queryByString(String searchString) {
-		
+	public void queryByString(String searchString) {	
 		mContactsListFragment = getContactListFragment();
 		/**
 		 * One pane fragment - 2 Fragments are in same screen
 		 * */
 		if( mContactsListFragment != null ) {
 			mContactsListFragment.searchForContact(ContactListFragment.SEARCH_QUERY_MODE, searchString);
-		}
-			
+		}		
 	}
 	
 	/**
@@ -51,7 +46,6 @@ public class MainActivity extends FragmentActivity implements SearchFragment.onS
 	 * */
 	@Override
 	public void queryByAlphabet(String alphabet) {
-		
 		mContactsListFragment = getContactListFragment();
 		/**
 		 * One pane fragment - 2 Fragments are in same screen
@@ -59,8 +53,5 @@ public class MainActivity extends FragmentActivity implements SearchFragment.onS
 		if( mContactsListFragment != null ) {
 			mContactsListFragment.searchForContact(ContactListFragment.SEARCH_ALPHABET_MODE, alphabet);
 		}
-		
 	}
-
-	
 }

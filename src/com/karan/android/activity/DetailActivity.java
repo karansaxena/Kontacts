@@ -31,8 +31,7 @@ public class DetailActivity extends Activity {
         setTextViewData();
         setOnClickListeners();
     }
-
-
+    
     private void parseIntent() {
         try {
             Bundle b = getIntent().getExtras();
@@ -42,12 +41,9 @@ public class DetailActivity extends Activity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
     private void setTextViewData() {
-
         nameTV.setText(name);
         emailTV.setText(email);
         phoneTV.setText(phone);
@@ -60,7 +56,6 @@ public class DetailActivity extends Activity {
                 Uri callNumUri = Uri.parse("tel:" + phone);
                 Intent callIntent = new Intent(Intent.ACTION_DIAL, callNumUri);
                 startActivity(callIntent);
-
             }
         });
         smsButton.setOnClickListener(new View.OnClickListener() {
@@ -74,23 +69,13 @@ public class DetailActivity extends Activity {
         emailButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
-
-
                 String aEmailList[] = { email };
-
                 emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, aEmailList);
-
-
                 emailIntent.setType("plain/text");
-
                 startActivity(emailIntent);
-
             }
         });
-
-
     }
 
     @Override
